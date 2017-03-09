@@ -1,0 +1,19 @@
+
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <nav *ngIf="router.url != '/login'">
+            <a (click)="logoutDo()">Logout</a>
+            <a routerLink="/home" routerLinkActive="active">Home</a>
+        </nav>
+        <div class="col-sm-8 col-sm-offset-2">
+            <alert></alert>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+
+  
+
+

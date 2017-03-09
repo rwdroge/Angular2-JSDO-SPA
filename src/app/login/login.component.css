@@ -1,0 +1,75 @@
+#container {
+    position: fixed;
+    width: 340px;
+    height: 280px;
+    top: 50%;
+    left: 50%;
+    margin-top: -140px;
+    margin-left: -170px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+form {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+label {
+    color: #555;
+    display: inline-block;
+    margin-left: 18px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+p a {
+    font-size: 11px;
+    color: #aaa;
+    float: right;
+    margin-top: -13px;
+    margin-right: 20px;
+}
+p a:hover {
+    color: #555;
+}
+input {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    outline: none;
+    color: #777;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    margin-left: 18px;
+    width: 290px;
+    height: 35px;
+}
+
+#buttongroup {
+    background: #ecf2f5;
+    width: 100%;
+    height: 69px;
+    margin-top: 20px;
+}
+
+#message {
+	color: red;
+    background: #fff;
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+a.button {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+}
+
+
