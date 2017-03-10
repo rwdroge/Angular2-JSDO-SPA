@@ -18,13 +18,12 @@ let session = new Session(jsdoOptions);
 
 @Injectable()
 export class JsdoService {
-  
+  session = session;
     
   logindata: LoginData = { 
                           username: '',
                           password: '',
-                          customer: '',
-                          errorMessage: ''
+                          customer: ''
   };
 
   constructor(
@@ -37,8 +36,7 @@ export class JsdoService {
       var promise = new Promise((resolve, reject) => resolve(session.login(logindata.username + '@' + logindata.customer, logindata.password)));
       promise.then((val) => {
         try { 
-          debugger;
-          this.router.navigate(['home']);
+          this.router.navigate(['/home']);
         } 
         catch(ex) {
           debugger;
@@ -61,6 +59,6 @@ export class JsdoService {
   }
   logout(): any {
       session.logout();
-      this.router.navigate(['login']);
+      this.router.navigate(['/login']);
   }
 }
