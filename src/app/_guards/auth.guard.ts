@@ -19,8 +19,7 @@ export class AuthGuard implements CanActivate {
             return true;
         })
         .catch((val) => {
-            //console.log(val);
-            this.router.navigate(['/login'], );
+            this.router.navigate(['/login'], { queryParams: { error: "There is no active login session, please login again" } } );
             return false;
         });
     }

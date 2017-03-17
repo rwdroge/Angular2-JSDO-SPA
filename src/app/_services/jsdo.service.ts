@@ -10,7 +10,7 @@ import { progress } from 'jsdo';
 var Session = progress.data.JSDOSession;
 var JSDO = progress.data.JSDO;
 var jsdoOptions = {
-  "serviceURI": "http://localhost:9210/RemsOnline",
+  "serviceURI": "http://localhost:9210/Sports2017",
   "authenticationModel": "form",
   "name": "websecurity"
 };
@@ -33,7 +33,7 @@ export class JsdoService {
   login(logindata): any {
     
     try { 
-      var promise = new Promise((resolve, reject) => resolve(session.login(logindata.username + '@' + logindata.customer, logindata.password)));
+      var promise = new Promise((resolve, reject) => resolve(session.login(logindata.username /*+ '@' + logindata.customer*/, logindata.password)));
       promise.then((val) => {
         try { 
           this.router.navigate(['/home']);

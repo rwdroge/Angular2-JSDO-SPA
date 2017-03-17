@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { GridModule } from '@progress/kendo-angular-grid';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 
 import { AppRoutingModule } from './app-routing.module';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
 
 
 
@@ -26,7 +28,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonsModule,
+    GridModule
   ],
   providers: [
     AuthGuard,

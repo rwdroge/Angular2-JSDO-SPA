@@ -1,7 +1,13 @@
+@import "../node_modules/@progress/kendo-theme-default/dist/all.css";
+
 a {
     cursor: pointer;
 }
 
 .help-block {
     font-size: 12px;
+}
+
+.alert {
+    text-align: center;
 }
