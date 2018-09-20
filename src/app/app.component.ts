@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { JsdoService } from './_services/index';
 import { Router } from '@angular/router';
+import { LoginService } from './_services/index';
 
 @Component({
   selector: 'app',
@@ -11,11 +11,10 @@ import { Router } from '@angular/router';
 export class AppComponent { 
 
   constructor(
-    private loginService: JsdoService,
-    private router: Router) { }
-    
+    private router: Router,
+    private loginService: LoginService) { }
+  
   logoutDo(): any  {
     this.loginService.logout();
   }
-
 }

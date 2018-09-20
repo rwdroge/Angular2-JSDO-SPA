@@ -1,0 +1,10 @@
+<kendo-grid
+          [data]="view | async"
+          [pageSize]="pageSize"
+          [skip]="skip"
+          [pageable]="true"
+        >
+        <kendo-grid-column field="Itemnum" width="100"></kendo-grid-column>
+        <kendo-grid-column field="ItemName" width="200"></kendo-grid-column>
+        <kendo-grid-column field="Price"></kendo-grid-column>
+</kendo-grid>

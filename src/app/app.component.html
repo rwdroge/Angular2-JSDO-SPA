@@ -2,9 +2,10 @@
 <!-- main app container -->
 <div class="jumbotron">
     <div class="container">
-        <nav *ngIf="router.url != '/login'">
+        <nav *ngIf="router.url.substring(0,6) != '/login'">
             <a (click)="logoutDo()">Logout</a>
             <a routerLink="/home" routerLinkActive="active">Home</a>
+            <a routerLink="/item" routerLinkActive="active">Items</a>
         </nav>
         <div class="col-sm-8 col-sm-offset-2">
             <alert></alert>

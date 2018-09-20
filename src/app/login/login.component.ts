@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginData } from '../_models/index';
-import { AlertService, JsdoService } from '../_services/index';
+import { AlertService, LoginService } from '../_services/index';
 import { Subscription } from "rxjs/Subscription";
 
 
@@ -21,13 +21,13 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private loginService: JsdoService,
+    private loginService: LoginService,
     private alertService: AlertService) 
     {
       this.logindata = loginService.logindata;
     }
   loginDo(): any {
-       this.loginService.login(this.logindata)
+       this.loginService.login(this.logindata);
        
   }
   
