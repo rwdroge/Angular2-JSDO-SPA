@@ -4,37 +4,27 @@ import { LoginService, itemService } from '../_services/index';
 import { Observable } from 'rxjs';
 import { GridComponent, GridDataResult, DataStateChangeEvent} from '@progress/kendo-angular-grid';
 import { progress } from '@progress/jsdo-core';
+import { State } from '@progress/kendo-data-query';
 
 @Component({
   providers: [itemService],
   templateUrl: 'item.component.html'
  })
 
-export class ItemComponent implements OnInit {
-    private view: Observable<GridDataResult>;
-    private pageSize: number = 20;
-    private skip: number  = 0;
+export class ItemComponent {
+    public view: Observable<GridDataResult>;
+    public state: State = { 
+        take: 20,
+        skip: 0
+    };
 
-    @ViewChild(GridComponent) private grid: GridComponent;
-    constructor(private route: ActivatedRoute,
-                private router: Router,
-                private service: itemService,
-                private login: LoginService){
-                    this.view = service;
-                }
-
-
-    ngOnInit() {
-        this.grid.dataStateChange
-        .do(({ skip, take }: DataStateChangeEvent) => {
-            this.skip = skip;
-            this.pageSize = take;
-        })
-        .subscribe(x => this.service.query(x));    
-        
+    constructor( private route: ActivatedRoute, private router: Router, private service: itemService) {
+        this.view = service;
+        this.service.query(this.state);
     }
 
-   public ngAfterViewInit(): void {
-        
+    public dataStateChange(state: DataStateChangeEvent): void {
+        this.state = state;
+        this.service.query(state);
     }
 }

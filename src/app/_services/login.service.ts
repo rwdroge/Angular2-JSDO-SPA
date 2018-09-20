@@ -12,7 +12,7 @@ import { DataResult, DataSource, DataSourceOptions } from "@progress/jsdo-angula
 @Injectable()
 export class LoginService {
   private dataSource: DataSource;
-  
+  public isLoggedIn:boolean = false;
   logindata: LoginData = { 
                           username: '',
                           password: ''
@@ -40,8 +40,10 @@ export class LoginService {
             })
         });
         this.session = koekoek.jsdosession;
+        this.isLoggedIn = true;
         this.router.navigate(['/item']);
     }, () => {
+      this.isLoggedIn = false;
       this.alertService.error("Error while creating session");
     });
   }

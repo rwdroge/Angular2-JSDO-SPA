@@ -11,13 +11,15 @@ import { State } from "@progress/kendo-data-query";
 @Injectable()
 export class itemService extends BehaviorSubject<GridDataResult>{
     private tableName: string = 'ttItems';
-    private jsdo: any;
+    private jsdo: progress.data.JSDO;
 
     constructor(private http: Http,
                 private loginService: LoginService,
                 private alertService: AlertService) 
     {
+        
         super(null);
+        this.jsdo = new progress.data.JSDO("item"); 
 
     }
 
@@ -35,7 +37,7 @@ export class itemService extends BehaviorSubject<GridDataResult>{
                 skip: state.skip,
                 top: state.take
             };
-            console.log("do i get here at all?");
+            
             let promise = new Promise((resolve, reject) => {
                 let afterFill = (jsdo: any, success: any, request: any) => {
                         jsdo.unsubscribe('AfterFill', afterFill, this);
