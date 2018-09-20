@@ -3,3 +3,5 @@ e2e/
 .vscode/
 .editorconfig
 .gitignore
+package-lock.json
+
