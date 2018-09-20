@@ -4,7 +4,7 @@ e2e/
 .editorconfig
 .gitignore
 package-lock.json
-karma.conf.json
-protractor.conf.json
+karma.conf.js
+protractor.conf.js
 
 
