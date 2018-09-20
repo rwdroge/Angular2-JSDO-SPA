@@ -1,8 +1,10 @@
 <kendo-grid
           [data]="view | async"
-          [pageSize]="pageSize"
-          [skip]="skip"
+          [pageSize]="state.take"
+          [skip]="state.skip"
           [pageable]="true"
+          [sortable]="true"
+          (dataStateChange)="dataStateChange($event)"
         >
         <kendo-grid-column field="Itemnum" width="100"></kendo-grid-column>
         <kendo-grid-column field="ItemName" width="200"></kendo-grid-column>
