@@ -1,0 +1,18 @@
+aside, container {
+    display: block;
+}
+
+.left-sidebar {
+	float: left;
+	width: 250px;
+	margin-left: -100%;
+	position: relative;
+	
+}
+
+.content {
+        width: 100%;
+        float: left;
+        display: block;
+        padding: 0 0 0 270px;
+}

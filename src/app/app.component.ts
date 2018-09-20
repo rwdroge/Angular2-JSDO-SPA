@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './_services/index';
+import { PanelBarItemModel } from '@progress/kendo-angular-layout';
+
 
 @Component({
   selector: 'app',
@@ -9,6 +11,7 @@ import { LoginService } from './_services/index';
 })
 
 export class AppComponent { 
+  private selectedId: string = '';
 
   constructor(
     private router: Router,
@@ -17,4 +20,15 @@ export class AppComponent {
   logoutDo(): any  {
     this.loginService.logout();
   }
+
+  public stateChange(data: Array<PanelBarItemModel>): boolean {
+    const focusedEvent: PanelBarItemModel = data.filter(item => item.focused === true)[0];
+
+    if (focusedEvent.title == 'Logout') {
+       this.selectedId = focusedEvent.title;
+       this.logoutDo();
+    }
+
+    return false;
+}
 }

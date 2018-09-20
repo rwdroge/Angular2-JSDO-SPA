@@ -15,6 +15,11 @@ import { ItemComponent } from './item/index';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuComponent } from './menu/menu.component';
+
+
 
 
 
@@ -25,7 +30,8 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     AlertComponent,
     HomeComponent,
     LoginComponent,
-    ItemComponent
+    ItemComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,9 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     HttpModule,
     ButtonsModule,
     GridModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthGuard,
