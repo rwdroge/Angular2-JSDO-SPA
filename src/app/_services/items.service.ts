@@ -14,6 +14,7 @@ export class itemService extends BehaviorSubject<GridDataResult>{
     private jsdo: progress.data.JSDO;
 
     constructor(private http: Http,
+                private router: Router,
                 private loginService: LoginService,
                 private alertService: AlertService) 
     {
@@ -66,7 +67,13 @@ export class itemService extends BehaviorSubject<GridDataResult>{
                         }
                     };
                 that.jsdo.subscribe('AfterFill', afterFill, this);
-                that.jsdo.fill(query);
+                that.jsdo.fill(query).then(
+                    (done) => {
+                        console.log("done", done);
+                }).catch(
+                    (error) => {
+                        this.router.navigate(['/login'], { queryParams: { error: "There is no active login session, please login again" } } );
+                });
             });
 
             let result = Observable.fromPromise(promise)
