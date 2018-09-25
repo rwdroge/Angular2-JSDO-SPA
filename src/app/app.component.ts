@@ -18,7 +18,7 @@ export class AppComponent {
     private loginService: LoginService) { }
   
   logoutDo(): any  {
-    this.loginService.logout();
+    this.loginService.logout("Please login");
   }
 
   public stateChange(data: Array<PanelBarItemModel>): boolean {

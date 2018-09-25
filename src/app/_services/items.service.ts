@@ -72,7 +72,8 @@ export class itemService extends BehaviorSubject<GridDataResult>{
                         console.log("done", done);
                 }).catch(
                     (error) => {
-                        this.router.navigate(['/login'], { queryParams: { error: "There is no active login session, please login again" } } );
+                        this.loginService.logout("Your session has expired, please login again");
+                       //this.router.navigate(['/login'], { queryParams: { error: "There is no active login session, please login again" } } );
                 });
             });
 

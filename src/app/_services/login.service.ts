@@ -24,7 +24,7 @@ export class LoginService {
     private router: Router) {
   }
 
-  login(logindata): any {
+  login(logindata: LoginData): any {
 
     progress.data.getSession({
       serviceURI: "http://192.168.137.4:8810/Sports2017",
@@ -48,10 +48,10 @@ export class LoginService {
     });
   }
 
-  logout(): any {
+  logout(info: string): any {
       progress.data.invalidateAllSessions()
         .then((result) => {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/login'], { queryParams: { error: info } });
       }).catch((result) => {
           this.alertService.error(result.result, result.info);
       })
