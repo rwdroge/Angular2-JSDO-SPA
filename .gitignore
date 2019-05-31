@@ -3,7 +3,6 @@ e2e/
 .vscode/
 .editorconfig
 .gitignore
-package-lock.json
 karma.conf.js
 protractor.conf.js
 
